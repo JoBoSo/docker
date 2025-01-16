@@ -23,3 +23,6 @@ HEALTHCHECK --timeout=5s \
 
 RUN chmod +x /dokuwiki-entrypoint.sh
 ENTRYPOINT ["/dokuwiki-entrypoint.sh"]
+
+RUN chgrp -R 0 /some/directory && \
+    chmod -R g=u /some/directory
